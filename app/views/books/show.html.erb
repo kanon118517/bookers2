@@ -1,0 +1,8 @@
+<div>
+  <p>Title:<%= @book.title %></p>
+  <p>Opinion:<%= @book.body %></p>
+  <% if @book.user == current_user %>
+    <%= link_to "Edit", edit_book_path(@book.id) %>
+    <%= link_to "Destroy", book_path(@book.id), method: :delete, "date-confirm" => "本当に削除しますか？" %>
+  <% end %>
+</div>
